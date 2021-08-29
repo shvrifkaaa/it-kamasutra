@@ -1,7 +1,10 @@
 .nav{
     grid-area: n;
     background-color: burlywood;
-    }    
+}
+.nav h1{
+    text-align: center;
+}    
 .item a{
     color: white;
     text-decoration: none;

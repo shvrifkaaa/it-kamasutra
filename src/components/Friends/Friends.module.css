@@ -1,0 +1,12 @@
+.cont {
+    display:inline-flex;
+    background-color:greenyellow;
+    /* font-size: 35px; */
+}
+.cont div{
+}
+.cont img {
+    height: 88px;
+    border-radius: 72px;
+    padding: 5px;
+}
