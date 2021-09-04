@@ -18,12 +18,12 @@ const App = (props) => {
 
           <Route path='/dialogs'
            render={ () => <Dialogs
-            state ={props.Appstate.dialogsPage} />} />
+            state ={props.state.dialogsPage} />} />
             
             <Route path='/Profile'
             render={ () => <Profile
             addPost = {props.addPost}
-            state ={props.Appstate.profilePage} />} />
+            state ={props.state.profilePage} />} />
 
           </div>
      </div>
