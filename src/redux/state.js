@@ -20,6 +20,14 @@ let state ={
         {id : 4, name: 'Filipp'},
         {id : 5, name: 'Adela'},
     ]
-}
+},}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id : 5,
+        message : postMessage,
+        likescount : 0 
+    };
+    state.profilePage.posts.push(newPost);
 }
 export default state
