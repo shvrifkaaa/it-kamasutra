@@ -11,23 +11,25 @@ const App = (props) => {
 
     return (
       <BrowserRouter>
-    <div className="app-wrapper">
-          < Header />
-          <Navbar />
+        <div className="app-wrapper">
+            < Header />
+            <Navbar />
           <div className="app-wrapper-content">
 
-          <Route path='/dialogs'
-           render={ () => <Dialogs
-            state ={props.state.dialogsPage} />} />
+            <Route path='/dialogs'
+              render={ () => <Dialogs
+              state ={props.state.dialogsPage} />}
+            />
             
             <Route path='/Profile'
-            render={ () => <Profile
-            addPost = {props.addPost}
-            state ={props.state.profilePage} />} />
-
+              render={ () => <Profile
+              addPost = {props.addPost}
+              profilePage ={props.state.profilePage}
+              updateNewPostText={props.updateNewPost} />}
+            />
           </div>
-     </div>
-     </BrowserRouter>
+        </div>
+      </BrowserRouter>
   );
 }
 export default App;
