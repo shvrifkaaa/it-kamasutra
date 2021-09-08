@@ -32,13 +32,13 @@ export let addPost = () => {
         likescount : 0 
     };
     state.profilePage.posts.push(newPost);
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 }
-
+                                // window.state = state
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 }
 export const subscribe = (observer) =>{
     rerenderEntireTree = observer;          // observer //
