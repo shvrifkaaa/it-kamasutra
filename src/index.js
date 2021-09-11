@@ -11,13 +11,11 @@ let rerenderEntireTree = (state) => {
 
 ReactDOM.render(
     <BrowserRouter> 
-        <App state={store.getState()} addPost = {store.addPost} updateNewPost={store.updateNewPostText} />
+        <App state={store.getState()} addPost = {store.addPost.bind(store)} updateNewPost={store.updateNewPostText.bind(store)} />
     </BrowserRouter>, document.getElementById('root'));
-
 }
-
 rerenderEntireTree(store.getState) 
-subscribe(rerenderEntireTree)
+store.subscribe(rerenderEntireTree)
 
 
 

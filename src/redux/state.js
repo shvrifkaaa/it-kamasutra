@@ -14,20 +14,23 @@ let store ={
             {id : 3, message: 'ajgkadfgkm'},
             {id : 4, message: 'ksmdkfj'},
         ],
-            dialogs: [    
+            dialogs:[    
             {id : 1, name: 'Sharif'},
             {id : 2, name: 'Erna'},
             {id : 3, name: 'Emir'},
             {id : 4, name: 'Filipp'},
-            {id : 5, name: 'Adela'},]},
+            {id : 5, name: 'Adela'},
+        ]},
         },
+
         getState() {
             return this._state
         },
 
         _callSubscriber () { 
         console.log('state was changed')
-       },
+        },
+
         addPost () {
         let newPost = {
             id : 5,
@@ -37,17 +40,17 @@ let store ={
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = ' ';
             this._callSubscriber(this._state);
-    },
+        },
+
         updateNewPostText  (newText) {
             this._state.profilePage.newPostText = newText;
             this._callSubscriber(this._state);
         },
+
         subscribe (observer){
             this._callSubscriber = observer;          // observer //
          }
 }
-
-
 
 export default store
 window.state = store 
