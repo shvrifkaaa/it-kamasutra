@@ -24,8 +24,7 @@ const App = (props) => {
             <Route path='/Profile'
               render={ () => <Profile
               profilePage ={props.state.profilePage}
-              addPost = {props.addPost}
-              updateNewPostText={props.updateNewPost} />}
+              dispatch = {props.dispatch} />}
             />
           </div>
         </div>
