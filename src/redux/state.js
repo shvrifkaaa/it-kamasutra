@@ -4,13 +4,14 @@ import dialogsReducer from "./dialogs-reducer"
 
  
 let store ={ 
-        _state :{
-        profilePage:{
+        _state : {
+        
+            profilePage:{
             posts : [    
                 {id : 1, message: 'Hi, how are u ?', likescount: 12},
                 {id : 2, message: 'It`s my first post', likescount: 5},
         ],
-        newPostText:'it-kamasutra.com'
+        newPostText:''
         },
         dialogsPage:{
             messages: [    
@@ -28,23 +29,28 @@ let store ={
         ],
             newMessageBody: " "
         },
+
         sidebar:{},
 
 
 
-        _callSubscriber () { 
+        _callSubscriber() { 
             console.log('state was changed')
         },
-        getState() {
+
+        getState(){
             return this._state;
         },
+
         subscribe (observer){
             this._callSubscriber = observer;          // observer //
         },
+        
         dispatch(action){
             this._state.profilePage= profileReducer(this._state.profilePage, action);
             this._state.dialogsPage= dialogsReducer(this._state.dialogsPage, action);
-            this._state.sidebar=     sidebarReducer(this._state.sidebar, action);
+            this._state.sidebar= sidebarReducer(this._state.sidebar, action);
+            
             this._callSubscriber(this._state);
             }
         }
